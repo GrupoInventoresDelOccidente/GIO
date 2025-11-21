@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario GIO – Idiomas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS de GIO -->
+  <link
+    rel="stylesheet"
+    href="https://grupoinventoresdeloccidente.github.io/GIO/css/form/gio-form.css">
+</head>
+
+<body>
+
+  <!-- CONTENEDOR -->
+  <main class="gio-form-root">
+
+    <!-- BARRA DE IDIOMAS -->
+    <header class="gio-lang-bar gio-no-print">
+      <p class="gio-lang-bar-title"
+         data-i18n="selector_idioma_formulario">
+        Seleccionar idioma del formulario
+      </p>
+
+      <div id="gio-lang-buttons" class="gio-lang-buttons"></div>
+    </header>
+
+    <hr class="gio-form-divider">
+
+    <!-- BOTÓN GUARDAR -->
+    <section class="gio-actions-bar">
+      <button id="btn_guardar"
+              type="button"
+              class="gio-btn gio-btn-primary"
+              data-i18n="btn_guardar">
+        Guardar
+      </button>
+    </section>
+
+  </main>
+
+  <!-- SCRIPT LÓGICA IDIOMAS -->
+  <script>
+    /**
+     * URL del WebApp para obtener los idiomas activos.
+     * Módulo: CFG_Idiomas
+     */
+    const URL_CFG_Idiomas =
+      "https://script.google.com/macros/s/AKfycbx1VsHKr2RzhGbs6ZQ_4zrPu4ZZreIwWijiolUm2TlK5YpR1T4xyxR0_tmHA2V3YTMbg/exec";
+
+    let langActual = "es-419";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      cargarIdiomasCFG();
+    });
+
+    /**
+     * Obtiene la lista de idiomas desde la API CFG_Idiomas
+     */
+    function cargarIdiomasCFG() {
+    const payload = { accion: "obtener_idiomas_activos" };
+
+    fetch(URL_CFG_Idiomas, {
+        method: "POST",
+        // OJO: sin headers → el navegador manda text/plain por defecto (simple request)
+        body: JSON.stringify(payload)
+    })
+    .then(r => r.json())
+    .then(lista => {
+        console.log("Idiomas recibidos desde CFG_Idiomas:", lista);
+        construirBotonesIdioma(lista);
+    })
+    .catch(err => {
+        console.error("Error al obtener idiomas CFG_Idiomas:", err);
+        // fallback a un solo idioma
+        construirBotonesIdioma([
+        { lang_code: "es-419", nombre_nativo: "Español (Latinoamérica)" }
+        ]);
+    });
+    }
+
+
+    /**
+     * Construye los botones de idioma dinámicamente
+     */
+    function construirBotonesIdioma(lista) {
+      const cont = document.getElementById("gio-lang-buttons");
+      cont.innerHTML = "";
+
+      lista.forEach(idioma => {
+        const btn = document.createElement("button");
+        btn.className = "gio-lang-button";
+        btn.textContent = idioma.nombre_nativo;
+        btn.dataset.lang = idioma.lang_code;
+
+        btn.onclick = () => seleccionarIdioma(idioma.lang_code);
+
+        cont.appendChild(btn);
+      });
+
+      // Marcar activo el idioma inicial
+      marcarIdiomaActivo(langActual);
+    }
+
+    /**
+     * Marca un idioma como seleccionado
+     */
+    function seleccionarIdioma(lang) {
+      langActual = lang;
+      marcarIdiomaActivo(lang);
+      console.log("Idioma activo:", lang);
+    }
+
+    /**
+     * Visualmente marca el botón activo
+     */
+    function marcarIdiomaActivo(lang) {
+      document.querySelectorAll(".gio-lang-button").forEach(b => {
+        b.classList.toggle("gio-lang-button--active", b.dataset.lang === lang);
+      });
+    }
+  </script>
+
+</body>
+</html>
