@@ -1,0 +1,453 @@
+
+/* =========================================
+   VARIABLES DE COLOR Y AJUSTES GENERALES
+   ========================================= */
+:root {
+  --gio-color-primary: #154360;
+  --gio-color-primary-light: #2471a3;
+  --gio-color-secondary: #1e8449;
+  --gio-color-secondary-light: #d5f5e3;
+  --gio-color-bg: #f5f5f5;
+  --gio-color-card-bg: #ffffff;
+  --gio-color-border: #d5d8dc;
+  --gio-color-border-soft: #e5e7e9;
+  --gio-color-text-main: #1c2833;
+  --gio-color-text-soft: #566573;
+  --gio-color-danger: #c0392b;
+  --gio-color-warning: #d68910;
+  --gio-color-success: #1e8449;
+}
+
+/* Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Cambria, "Times New Roman", serif;
+  font-size: 14px;
+  color: var(--gio-color-text-main);
+  background-color: var(--gio-color-bg);
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL DE FORMULARIOS
+   ========================================= */
+.gio-form-root {
+  max-width: 900px;               /* Ancho objetivo escritorio */
+  margin: 20px auto 40px auto;
+  padding: 20px 24px 30px 24px;
+  background-color: var(--gio-color-card-bg);
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Para formularios a pantalla completa, si alguna vez se requiere */
+.gio-form-root--full {
+  max-width: 100%;
+}
+
+/* =========================================
+   TIPOGRAFÍA GENÉRICA
+   ========================================= */
+.gio-title-main {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 6px 0;
+}
+
+.gio-title-section {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 18px 0 6px 0;
+}
+
+.gio-subtitle {
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--gio-color-text-soft);
+  margin: 0 0 10px 0;
+}
+
+.gio-text-normal {
+  font-size: 14px;
+  margin: 0 0 6px 0;
+}
+
+.gio-text-small {
+  font-size: 12px;
+  color: var(--gio-color-text-soft);
+  margin: 0;
+}
+
+/* =========================================
+   SECCIONES DEL FORMULARIO
+   ========================================= */
+.gio-section {
+  margin-top: 16px;
+  padding-top: 4px;
+  border-top: 1px solid var(--gio-color-border-soft);
+}
+
+.gio-section:first-of-type {
+  border-top: none;
+}
+
+/* =========================================
+   CAMPOS DE FORMULARIO
+   ========================================= */
+.gio-field {
+  margin-bottom: 12px;
+}
+
+.gio-field-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.gio-field-label span.gio-label-required {
+  color: var(--gio-color-danger);
+  margin-left: 2px;
+}
+
+.gio-input,
+.gio-select,
+.gio-textarea {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--gio-color-border);
+  font-family: inherit;
+  font-size: 14px;
+  background-color: #fff8dc;      /* Amarillo suave tipo “campo editable” */
+}
+
+.gio-input:focus,
+.gio-select:focus,
+.gio-textarea:focus {
+  outline: none;
+  border-color: var(--gio-color-primary-light);
+  box-shadow: 0 0 0 2px rgba(36, 113, 163, 0.18);
+}
+
+/* Variante solo lectura */
+.gio-input--readonly,
+.gio-select--readonly,
+.gio-textarea--readonly {
+  background-color: #f2f3f4;
+  color: var(--gio-color-text-soft);
+}
+
+/* Estados de validación */
+.gio-input--error,
+.gio-select--error,
+.gio-textarea--error {
+  border-color: var(--gio-color-danger);
+  background-color: #fbeee9;
+}
+
+.gio-input--valid,
+.gio-select--valid,
+.gio-textarea--valid {
+  border-color: var(--gio-color-success);
+  background-color: #eafaf1;
+}
+
+/* Textos de ayuda y error */
+.gio-helper-text {
+  font-size: 12px;
+  color: var(--gio-color-text-soft);
+  margin-top: 2px;
+}
+
+.gio-error-text {
+  font-size: 12px;
+  color: var(--gio-color-danger);
+  margin-top: 2px;
+}
+
+/* Contadores de caracteres */
+.gio-char-counter {
+  font-size: 11px;
+  color: var(--gio-color-text-soft);
+  text-align: right;
+  margin-top: 1px;
+}
+
+/* =========================================
+   BARRA DE IDIOMAS
+   ========================================= */
+.gio-lang-bar {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.gio-lang-bar-title {
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+
+.gio-lang-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gio-lang-button {
+  min-width: 120px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--gio-color-secondary);
+  background-color: var(--gio-color-secondary-light); /* Verde claro */
+  color: #145a32;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.gio-lang-button:hover {
+  transform: translateY(-1px);
+}
+
+.gio-lang-button--active {
+  background-color: var(--gio-color-secondary);       /* Verde oscuro */
+  color: #ffffff;
+}
+
+/* =========================================
+   BOTONES
+   ========================================= */
+.gio-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  transition: filter 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.gio-btn-primary {
+  background-color: var(--gio-color-primary);
+  color: #ffffff;
+}
+
+.gio-btn-secondary {
+  background-color: var(--gio-color-secondary);
+  color: #ffffff;
+}
+
+.gio-btn-outline {
+  background-color: transparent;
+  color: var(--gio-color-primary);
+  border: 1px solid var(--gio-color-primary);
+}
+
+.gio-btn-danger {
+  background-color: var(--gio-color-danger);
+  color: #ffffff;
+}
+
+.gio-btn:disabled,
+.gio-btn.gio-btn--disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.gio-btn:hover:not(:disabled):not(.gio-btn--disabled) {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+/* Barra de acciones al pie del formulario */
+.gio-actions-bar {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* =========================================
+   MENSAJES / ALERTAS
+   ========================================= */
+.gio-alert {
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+.gio-alert-info {
+  background-color: #ebf5fb;
+  border: 1px solid #aed6f1;
+  color: #1b4f72;
+}
+
+.gio-alert-success {
+  background-color: #eafaf1;
+  border: 1px solid #a9dfbf;
+  color: #145a32;
+}
+
+.gio-alert-warning {
+  background-color: #fef5e7;
+  border: 1px solid #f8c471;
+  color: #7d510f;
+}
+
+.gio-alert-danger {
+  background-color: #fbeee9;
+  border: 1px solid #f5b7b1;
+  color: #7b241c;
+}
+
+/* =========================================
+   MODALES GENÉRICOS
+   ========================================= */
+.gio-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.4);
+  display: none;            /* Mostrar con .gio-modal-backdrop--open */
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.gio-modal-backdrop--open {
+  display: flex;
+}
+
+.gio-modal {
+  max-width: 480px;
+  width: 90%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.35);
+  padding: 16px 18px 14px 18px;
+}
+
+.gio-modal-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+}
+
+.gio-modal-body {
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.gio-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* =========================================
+   UTILIDADES
+   ========================================= */
+.gio-flex-row {
+  display: flex;
+  gap: 8px;
+}
+
+.gio-flex-col {
+  flex: 1 1 0;
+}
+
+.gio-divider {
+  border: 0;
+  border-top: 1px solid var(--gio-color-border-soft);
+  margin: 12px 0;
+}
+
+.gio-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 11px;
+  background-color: #f2f3f4;
+  color: var(--gio-color-text-soft);
+}
+
+/* Ocultar en impresión / Mostrar solo en impresión */
+.gio-no-print {
+  /* Se ajusta en @media print */
+}
+
+.gio-only-print {
+  display: none;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 600px) {
+  .gio-form-root {
+    margin: 10px auto 30px auto;
+    padding: 14px 10px 18px 10px;
+    border-radius: 0;
+  }
+
+  .gio-flex-row {
+    flex-direction: column;
+  }
+
+  .gio-lang-buttons {
+    justify-content: stretch;
+  }
+
+  .gio-lang-button {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   IMPRESIÓN A4
+   ========================================= */
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm 15mm 18mm 15mm;
+  }
+
+  body {
+    background-color: #ffffff;
+  }
+
+  .gio-form-root {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  /* Elementos que no deben imprimirse */
+  .gio-no-print,
+  .gio-lang-bar,
+  .gio-actions-bar,
+  .gio-modal-backdrop {
+    display: none !important;
+  }
+
+  /* Elementos solo para impresión (encabezado/pie) */
+  .gio-only-print {
+    display: block !important;
+  }
+}
