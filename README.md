@@ -13,5 +13,3 @@ Este repositorio actúa como fuente central y confiable de:
 Brindar una base sólida, ordenada y mantenible para los recursos web que utiliza GIO, garantizando consistencia visual, modularidad y facilidad de actualización para los proyectos presentes y futuros.
 
 ---
-
-## 📦 Contenido sugerido del repositorio
