@@ -15,7 +15,7 @@ jobs:
 
     - name: Descargar JSON desde Apps Script
       run: |
-        curl -L -o idiomas.json "TU_URL_EXEC_AQUÍ"
+        curl -L -o idiomas.json "https://script.google.com/macros/s/AKfycbztVWQ3stDethpCF7jzcL8uzAWIe1z_9qpl-2PRW4KVqz3cvf2fscqLXHLZ9EWF16iX/exec"
 
     - name: Convertir JSON a archivo JavaScript
       run: |
