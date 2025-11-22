@@ -1,0 +1,29 @@
+name: Actualizar CFG_Idiomas
+
+on:
+  schedule:
+    - cron: "1 6 * * *"   # 00:01 AM hora Ciudad de México (UTC-6)
+  workflow_dispatch:       # Botón de actualización de emergencia
+
+jobs:
+  update-idiomas:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Descargar JSON desde Apps Script
+      run: |
+        curl -L -o idiomas.json "TU_URL_EXEC_AQUÍ"
+
+    - name: Convertir JSON a archivo JavaScript
+      run: |
+        echo "window.CFG_Idiomas = $(cat idiomas.json);" > api/cfg_idiomas.js
+        rm idiomas.json
+
+    - name: Commit y Push automático
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "Actualización automática CFG_Idiomas"
+        branch: main
