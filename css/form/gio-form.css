@@ -533,4 +533,41 @@ body {
   color: #444;
   font-family: system-ui;
 }
+/* === LOADER === */
+.gio-loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .6s ease;
+  z-index: 99999;
+}
+
+.gio-loader-box {
+  text-align: center;
+}
+
+.gio-loader-text {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #154360;
+}
+
+.gio-progress {
+  width: 220px;
+  height: 14px;
+  border-radius: 20px;
+  background: #e5e7e9;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.gio-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #1e8449;
+  transition: width .35s ease;
+}
 
