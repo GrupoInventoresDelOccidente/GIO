@@ -1,41 +1,22 @@
-/* =====================================================
+/* ===============================================
    GIO — Archivo Maestro de Estilos
-   Archivo: styles-gio-master.css
    Este archivo importa todos los módulos CSS de GIO.
-   ===================================================== */
+   =============================================== */
 
+/* VARIABLES Y COLORES */
+@import url("./styles-gio-colores.css");
 
-/* =========================================
-   VARIABLES Y COLORES
-   ========================================= */
-@import url("styles-gio-colores.css");
+/* TIPOGRAFÍA Y FORMATOS DE TEXTO */
+@import url("./styles-gio-textos.css");
 
+/* DISTRIBUCIÓN Y ESTRUCTURA (LAYOUT) */
+@import url("./styles-gio-distribucion.css");
 
-/* =========================================
-   TIPOGRAFÍA Y FORMATOS DE TEXTO
-   ========================================= */
-@import url("styles-gio-textos.css");
+/* INPUTS, SELECTS Y TEXTAREAS */
+@import url("./styles-gio-inputs.css");
 
+/* MENSAJES DINÁMICOS */
+@import url("./styles-gio-mensajes.css");
 
-/* =========================================
-   DISTRIBUCIÓN Y ESTRUCTURA (LAYOUT)
-   ========================================= */
-@import url("styles-gio-distribucion.css");
-
-
-/* =========================================
-   INPUTS, SELECTS Y TEXTAREAS
-   ========================================= */
-@import url("styles-gio-inputs.css");
-
-
-/* =========================================
-   MENSAJES DINÁMICOS
-   ========================================= */
-@import url("styles-gio-mensajes.css");
-
-
-/* =========================================
-   IMPRESIÓN A4
-   ========================================= */
-@import url("styles-gio-impresiones-a4.css");
+/* IMPRESIÓN A4 */
+@import url("./styles-gio-impresiones-a4.css");
