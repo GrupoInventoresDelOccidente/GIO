@@ -1,0 +1,114 @@
+/* =====================================================
+   GIO — Sistema de Mensajes Dinámicos
+   Archivo: styles-gio-mensajes.css
+   Manejo de errores, advertencias, éxitos e info
+   ===================================================== */
+
+
+/* =========================================
+   ANIMACIONES DE APARICIÓN / DESAPARICIÓN
+   ========================================= */
+
+@keyframes mensaje_aparecer {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes mensaje_desaparecer {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-4px); }
+}
+
+
+/* =========================================
+   ESTILOS BASE
+   ========================================= */
+
+.mensaje {
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 6px 0;
+  animation: mensaje_aparecer 0.25s ease-out;
+  font-family: var(--font-general);
+}
+
+
+/* =========================================
+   TIPOS DE MENSAJE
+   ========================================= */
+
+/* === ERROR — rojo === */
+.mensaje_error {
+  background: var(--clr-rojo-bajo);
+  border: 1px solid var(--clr-rojo-medio);
+  color: var(--clr-rojo-alto);
+}
+
+/* === ADVERTENCIA — naranja === */
+.mensaje_advertencia {
+  background: var(--clr-naranja-bajo);
+  border: 1px solid var(--clr-naranja-medio);
+  color: var(--clr-naranja-alto);
+}
+
+/* === ÉXITO — verde === */
+.mensaje_exito {
+  background: var(--clr-verde-bajo);
+  border: 1px solid var(--clr-verde-medio);
+  color: var(--clr-verde-alto);
+}
+
+/* === INFORMACIÓN — azul === */
+.mensaje_informacion {
+  background: var(--clr-azul-bajo);
+  border: 1px solid var(--clr-azul-medio);
+  color: var(--clr-azul-alto);
+}
+
+
+/* =========================================
+   MENSAJES ASOCIADOS A INPUTS
+   ========================================= */
+
+.mensaje_input {
+  margin-top: 4px;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.mensaje_input_error {
+  background: var(--clr-rojo-bajo);
+  color: var(--clr-rojo-medio);
+}
+
+.mensaje_input_advertencia {
+  background: var(--clr-amarillo-bajo);
+  color: var(--clr-amarillo-medio);
+}
+
+.mensaje_input_exito {
+  background: var(--clr-verde-bajo);
+  color: var(--clr-verde-medio);
+}
+
+
+/* =========================================
+   MENSAJE PEQUEÑO / MINIMALISTA
+   ========================================= */
+
+.mensaje_mini {
+  font-size: 11px;
+  color: var(--clr-texto-suave);
+  padding: 2px 4px;
+}
+
+
+/* =========================================
+   OCULTAR MENSAJE CON ANIMACIÓN
+   ========================================= */
+
+.mensaje.oculto {
+  animation: mensaje_desaparecer 0.25s ease-out forwards;
+}
