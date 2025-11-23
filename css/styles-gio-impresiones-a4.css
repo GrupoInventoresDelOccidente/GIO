@@ -1,0 +1,125 @@
+/* =====================================================
+   GIO — Estilos Profesionales para Impresión A4
+   Archivo: styles-gio-impresiones-a4.css
+   ===================================================== */
+
+@media print {
+
+  /* -----------------------------------------
+     CONFIGURACIÓN GENERAL DE LA PÁGINA
+     ----------------------------------------- */
+  @page {
+    size: A4;
+    margin: 15mm 15mm 18mm 15mm;
+  }
+
+  /* Fondo blanco limpio para impresión */
+  body {
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-family: var(--font-general);
+    color: var(--clr-negro-alto);
+  }
+
+
+  /* -----------------------------------------
+     OCULTAR ELEMENTOS NO IMPRIMIBLES
+     ----------------------------------------- */
+
+  .no_imprimir,
+  .btn_imprimir,
+  .botones_acciones,
+  .gio-lang-bar,
+  .loader_pantalla,
+  .mensaje_flotante,
+  .barra_estado {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+
+  /* -----------------------------------------
+     MOSTRAR ELEMENTOS SOLO IMPRESIÓN
+     ----------------------------------------- */
+  .solo_imprimir {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+
+  /* -----------------------------------------
+     AJUSTES DE CONTENEDORES
+     ----------------------------------------- */
+
+  .contenedor_formulario {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  /* Evitar cortes dentro de cajas críticas */
+  .seccion_formulario,
+  .contenedor_formulario,
+  .fila,
+  .columna {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+
+  /* -----------------------------------------
+     TIPOGRAFÍA PARA IMPRESIÓN
+     ----------------------------------------- */
+
+  h1, .titulo_h1,
+  h2, .titulo_h2,
+  h3, .titulo_h3 {
+    color: var(--clr-negro-alto);
+    font-weight: bold;
+  }
+
+  p, span, label, input, textarea, select {
+    font-size: 12px !important;
+    color: var(--clr-negro-alto) !important;
+  }
+
+
+  /* -----------------------------------------
+     CAMPOS Y TABLAS
+     ----------------------------------------- */
+
+  input,
+  textarea,
+  select {
+    border: 1px solid var(--clr-borde);
+    background: #ffffff;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-inside: avoid;
+  }
+
+  table th,
+  table td {
+    border: 1px solid var(--clr-borde);
+    padding: 6px;
+  }
+
+
+  /* -----------------------------------------
+     SEPARADORES Y ESPACIOS
+     ----------------------------------------- */
+
+  .separador_suave,
+  .separador_fuerte {
+    margin: 10px 0;
+    border-color: var(--clr-negro-medio) !important;
+  }
+
+}
