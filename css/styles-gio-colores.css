@@ -1,0 +1,45 @@
+/* =========================================
+   GIO – Variables de Colores
+   Archivo: styles-gio-colores.css
+   Estándar: --clr-[color]-[nivel]
+   Niveles: bajo, medio, alto
+   ========================================= */
+
+:root {
+
+  /* VERDES */
+  --clr-verde-bajo:   #d5f5e3;  /* Verde muy claro */
+  --clr-verde-medio:  #1e8449;  /* Verde estándar GIO */
+  --clr-verde-alto:   #145a32;  /* Verde oscuro */
+
+  /* ROJOS */
+  --clr-rojo-bajo:    #f5b7b1;  /* Rojo suave */
+  --clr-rojo-medio:   #c0392b;  /* Rojo estándar GIO (error) */
+  --clr-rojo-alto:    #7b241c;  /* Rojo fuerte */
+
+  /* AMARILLOS */
+  --clr-amarillo-bajo:  #fcf3cf; /* Amarillo claro */
+  --clr-amarillo-medio: #f1c40f; /* Amarillo estándar */
+  --clr-amarillo-alto:  #b7950b; /* Amarillo oscuro */
+
+  /* NARANJAS */
+  --clr-naranja-bajo:  #f8c471;  /* Naranja claro */
+  --clr-naranja-medio: #d68910;  /* Advertencia GIO */
+  --clr-naranja-alto:  #935116;  /* Naranja oscuro */
+
+  /* AZULES */
+  --clr-azul-bajo:    #aed6f1;  /* Azul claro */
+  --clr-azul-medio:   #2471a3;  /* Azul estándar claro */
+  --clr-azul-alto:    #154360;  /* Azul GIO principal */
+
+  /* NEGROS / GRISES */
+  --clr-negro-bajo:   #d5d8dc;  /* Gris claro */
+  --clr-negro-medio:  #566573;  /* Gris intermedio (texto suave) */
+  --clr-negro-alto:   #1c2833;  /* Negro azulado (texto principal) */
+
+  /* MORADOS */
+  --clr-morado-bajo:   #e8daef; /* Morado claro */
+  --clr-morado-medio:  #8e44ad; /* Morado estándar */
+  --clr-morado-alto:   #5b2c6f; /* Morado profundo */
+
+}
