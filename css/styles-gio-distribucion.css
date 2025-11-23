@@ -1,0 +1,196 @@
+/* =====================================================
+   GIO — Sistema de Distribución (Layout)
+   Archivo: styles-gio-distribucion.css
+   Nombres 100% en español y escalables
+   ===================================================== */
+
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+   ========================================= */
+
+.contenedor_formulario {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px 24px;
+  background: var(--clr-fondo-tarjeta);
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.15);
+}
+
+/* Versión de ancho completo */
+.contenedor_formulario_completo {
+  max-width: 100%;
+}
+
+
+/* =========================================
+   SECCIONES
+   ========================================= */
+
+.seccion_formulario {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid var(--clr-borde-suave);
+}
+
+.seccion_formulario:first-of-type {
+  border-top: none;
+}
+
+/* Título grande de sección */
+.titulo_seccion {
+  margin: 10px 0 6px 0;
+}
+
+
+/* =========================================
+   FILAS Y COLUMNAS
+   ========================================= */
+
+.fila {
+  display: flex;
+  gap: 12px;
+}
+
+.columna {
+  flex: 1 1 0;
+}
+
+/* Columnas iguales */
+.columna_igual {
+  flex: 1;
+}
+
+/* Fila vertical (para móviles) */
+.fila_vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+/* =========================================
+   ALINEACIONES
+   ========================================= */
+
+.alinear_centro {
+  text-align: center;
+}
+
+.alinear_izquierda {
+  text-align: left;
+}
+
+.alinear_derecha {
+  text-align: right;
+}
+
+.centrar_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* =========================================
+   ESPACIADOS
+   ========================================= */
+
+.espaciado_5  { margin: 5px 0; }
+.espaciado_10 { margin: 10px 0; }
+.espaciado_15 { margin: 15px 0; }
+.espaciado_20 { margin: 20px 0; }
+.espaciado_30 { margin: 30px 0; }
+
+/* Padding */
+.relleno_10 { padding: 10px; }
+.relleno_20 { padding: 20px; }
+.relleno_30 { padding: 30px; }
+
+
+/* =========================================
+   SEPARADORES
+   ========================================= */
+
+.separador_suave {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--clr-borde-suave);
+  margin: 12px 0;
+}
+
+.separador_fuerte {
+  width: 100%;
+  border: 0;
+  border-top: 2px solid var(--clr-negro-medio);
+  margin: 20px 0;
+}
+
+
+/* =========================================
+   CUERPO DEL FORMULARIO
+   ========================================= */
+
+.cuerpo_formulario {
+  margin-top: 20px;
+}
+
+
+/* =========================================
+   UTILIDADES
+   ========================================= */
+
+.oculto {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
+
+.bloque {
+  display: block;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex_centro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex_espaciado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .contenedor_formulario {
+    margin: 10px auto;
+    padding: 15px 14px;
+    border-radius: 0;
+  }
+
+  .fila {
+    flex-direction: column;
+  }
+
+  .columna {
+    width: 100%;
+  }
+}
