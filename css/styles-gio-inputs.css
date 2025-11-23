@@ -1,0 +1,211 @@
+/* =====================================================
+   GIO — Sistema de Inputs
+   Archivo: styles-gio-inputs.css
+   Nombres en español, estándares GIO
+   ===================================================== */
+
+
+/* =========================================
+   ESTILOS BASE — INPUTS GENERALES
+   ========================================= */
+
+.caja_texto,
+.caja_seleccion,
+.caja_textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--clr-borde);
+  background: #ffffff;
+  font-family: var(--font-general);
+  font-size: 14px;
+  color: var(--clr-texto-principal);
+  transition: all 0.25s ease;
+}
+
+.caja_textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+
+/* =========================================
+   ESTADOS DEL INPUT
+   ========================================= */
+
+/* Campo vacío, esperando dato */
+.input_vacio {
+  background: #fff8dc; /* amarillo suave */
+}
+
+/* Campo válido */
+.input_valido {
+  border-color: var(--clr-exito);
+  background: #eafaf1;
+}
+
+/* Campo con error */
+.input_error {
+  border-color: var(--clr-error);
+  background: #fdecea;
+}
+
+/* Solo lectura */
+.input_lectura {
+  background: #f2f3f4;
+  color: var(--clr-texto-suave);
+  border-color: var(--clr-borde-suave);
+}
+
+
+/* =========================================
+   ENFOQUE (FOCUS)
+   ========================================= */
+
+.caja_texto:focus,
+.caja_seleccion:focus,
+.caja_textarea:focus {
+  outline: none;
+  border-color: var(--clr-azul-medio);
+  box-shadow: 0 0 0 2px rgba(36, 113, 163, 0.25);
+}
+
+
+/* =========================================
+   HOVER
+   ========================================= */
+
+.caja_texto:hover,
+.caja_seleccion:hover,
+.caja_textarea:hover {
+  border-color: var(--clr-azul-alto);
+}
+
+
+/* =========================================
+   PLACEHOLDER
+   ========================================= */
+
+.caja_texto::placeholder,
+.caja_textarea::placeholder {
+  color: var(--clr-texto-suave);
+  opacity: 0.8;
+}
+
+
+/* =========================================
+   SELECT / LISTAS
+   ========================================= */
+
+.caja_seleccion {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%231c2833' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'><path d='M31.3 192h257.4c28.4 0 42.8 34.5 22.6 54.6l-128.7 128c-12.5 12.5-32.8 12.5-45.3 0l-128.7-128C-11.5 226.5 2.9 192 31.3 192z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+}
+
+
+/* =========================================
+   CONTADORES DE CARACTERES
+   ========================================= */
+
+.contador_caracteres {
+  font-size: 11px;
+  color: var(--clr-texto-suave);
+  text-align: right;
+  margin-top: 2px;
+}
+
+
+/* =========================================
+   CAMPOS AGRUPADOS (ejemplo: teléfono)
+   ========================================= */
+
+.grupo_input {
+  display: flex;
+  gap: 8px;
+}
+
+.grupo_input > .caja_seleccion {
+  width: 110px;
+}
+
+.grupo_input > .caja_texto {
+  flex: 1;
+}
+
+
+/* =========================================
+   VARIANTES PARA TIPOS ESPECÍFICOS
+   ========================================= */
+
+.input_numero {
+  text-align: right;
+}
+
+.input_mayusculas {
+  text-transform: uppercase;
+}
+
+.input_minusculas {
+  text-transform: lowercase;
+}
+
+.input_capital {
+  text-transform: capitalize;
+}
+
+
+/* =========================================
+   DESHABILITADO
+   ========================================= */
+
+.input_deshabilitado {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+
+
+/* =========================================
+   ETIQUETAS DE INPUT (LABEL)
+   ========================================= */
+
+.etiqueta_input {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: var(--clr-texto-principal);
+}
+
+.etiqueta_requerido {
+  color: var(--clr-rojo-medio);
+  margin-left: 4px;
+}
+
+
+/* =========================================
+   VERSIONES COMPACTAS
+   ========================================= */
+
+.input_compacto {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 600px) {
+  .grupo_input {
+    flex-direction: column;
+  }
+
+  .grupo_input > .caja_seleccion {
+    width: 100%;
+  }
+}
