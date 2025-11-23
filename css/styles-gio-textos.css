@@ -1,0 +1,170 @@
+/* =====================================================
+   GIO — Sistema Tipográfico Profesional
+   Archivo: styles-gio-textos.css
+   Estandarización: txt_[fuente]_[tamaño]_[variación]
+   ===================================================== */
+
+/* ==========================
+   VARIABLES DE FUENTES
+   ========================== */
+
+:root {
+  --txt-cambria: Cambria, "Times New Roman", serif;
+  --txt-arial: Arial, Helvetica, sans-serif;
+
+  --txt-italica: italic;
+  --txt-subrayado: underline;
+}
+
+/* ==========================
+   VARIABLES DE COLORES
+   (Conexión con colores GIO)
+   ========================== */
+
+:root {
+  /* VERDES */
+  --txt_clr-verde-bajo:   var(--clr-verde-bajo);
+  --txt_clr-verde-medio:  var(--clr-verde-medio);
+  --txt_clr-verde-alto:   var(--clr-verde-alto);
+
+  /* ROJOS */
+  --txt_clr-rojo-bajo:    var(--clr-rojo-bajo);
+  --txt_clr-rojo-medio:   var(--clr-rojo-medio);
+  --txt_clr-rojo-alto:    var(--clr-rojo-alto);
+
+  /* AMARILLOS */
+  --txt_clr-amarillo-bajo:  var(--clr-amarillo-bajo);
+  --txt_clr-amarillo-medio: var(--clr-amarillo-medio);
+  --txt_clr-amarillo-alto:  var(--clr-amarillo-alto);
+
+  /* NARANJAS */
+  --txt_clr-naranja-bajo:  var(--clr-naranja-bajo);
+  --txt_clr-naranja-medio: var(--clr-naranja-medio);
+  --txt_clr-naranja-alto:  var(--clr-naranja-alto);
+
+  /* AZULES */
+  --txt_clr-azul-bajo:    var(--clr-azul-bajo);
+  --txt_clr-azul-medio:   var(--clr-azul-medio);
+  --txt_clr-azul-alto:    var(--clr-azul-alto);
+
+  /* NEGROS / GRISES */
+  --txt_clr-negro-bajo:   var(--clr-negro-bajo);
+  --txt_clr-negro-medio:  var(--clr-negro-medio);
+  --txt_clr-negro-alto:   var(--clr-negro-alto);
+
+  /* MORADOS */
+  --txt_clr-morado-bajo:   var(--clr-morado-bajo);
+  --txt_clr-morado-medio:  var(--clr-morado-medio);
+  --txt_clr-morado-alto:   var(--clr-morado-alto);
+}
+
+/* =====================================================
+   TITULARES ESTÁNDAR
+   ===================================================== */
+
+.titulo_h1 {
+  font-family: var(--txt-cambria);
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.titulo_h2 {
+  font-family: var(--txt-cambria);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.titulo_h3 {
+  font-family: var(--txt-cambria);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.subtitulo {
+  font-family: var(--txt-cambria);
+  font-size: 18px;
+  font-weight: normal;
+}
+
+/* =====================================================
+   SISTEMA DE TEXTOS – CAMBRIA
+   Desde 36 a 14 (pasos de 2) y de 14 a 7 (pasos de 1)
+   Variantes: normal, negrita
+   ===================================================== */
+
+/* === Bloque CAMBRIA 36 → 14 === */
+
+.txt_cambria_36 { font-family: var(--txt-cambria); font-size: 36px; }
+.txt_cambria_36_negrita { font-family: var(--txt-cambria); font-size: 36px; font-weight: bold; }
+
+.txt_cambria_34 { font-size: 34px; }
+.txt_cambria_34_negrita { font-size: 34px; font-weight: bold; }
+
+.txt_cambria_32 { font-size: 32px; }
+.txt_cambria_32_negrita { font-size: 32px; font-weight: bold; }
+
+.txt_cambria_30 { font-size: 30px; }
+.txt_cambria_30_negrita { font-size: 30px; font-weight: bold; }
+
+.txt_cambria_28 { font-size: 28px; }
+.txt_cambria_28_negrita { font-size: 28px; font-weight: bold; }
+
+.txt_cambria_26 { font-size: 26px; }
+.txt_cambria_26_negrita { font-size: 26px; font-weight: bold; }
+
+.txt_cambria_24 { font-size: 24px; }
+.txt_cambria_24_negrita { font-size: 24px; font-weight: bold; }
+
+.txt_cambria_22 { font-size: 22px; }
+.txt_cambria_22_negrita { font-size: 22px; font-weight: bold; }
+
+.txt_cambria_20 { font-size: 20px; }
+.txt_cambria_20_negrita { font-size: 20px; font-weight: bold; }
+
+.txt_cambria_18 { font-size: 18px; }
+.txt_cambria_18_negrita { font-size: 18px; font-weight: bold; }
+
+.txt_cambria_16 { font-size: 16px; }
+.txt_cambria_16_negrita { font-size: 16px; font-weight: bold; }
+
+.txt_cambria_14 { font-size: 14px; }
+.txt_cambria_14_negrita { font-size: 14px; font-weight: bold; }
+
+/* === Bloque CAMBRIA 13 → 7 (paso 1) === */
+
+.txt_cambria_13 { font-size: 13px; }
+.txt_cambria_13_negrita { font-size: 13px; font-weight: bold; }
+
+.txt_cambria_12 { font-size: 12px; }
+.txt_cambria_12_negrita { font-size: 12px; font-weight: bold; }
+
+.txt_cambria_11 { font-size: 11px; }
+.txt_cambria_11_negrita { font-size: 11px; font-weight: bold; }
+
+.txt_cambria_10 { font-size: 10px; }
+.txt_cambria_10_negrita { font-size: 10px; font-weight: bold; }
+
+.txt_cambria_9 { font-size: 9px; }
+.txt_cambria_9_negrita { font-size: 9px; font-weight: bold; }
+
+.txt_cambria_8 { font-size: 8px; }
+.txt_cambria_8_negrita { font-size: 8px; font-weight: bold; }
+
+.txt_cambria_7 { font-size: 7px; }
+.txt_cambria_7_negrita { font-size: 7px; font-weight: bold; }
+
+/* =====================================================
+   SISTEMA DE TEXTOS – ARIAL
+   (Misma estructura que Cambria)
+   ===================================================== */
+
+.txt_arial_36 { font-family: var(--txt-arial); font-size: 36px; }
+.txt_arial_36_negrita { font-family: var(--txt-arial); font-size: 36px; font-weight: bold; }
+
+.txt_arial_34 { font-size: 34px; }
+.txt_arial_34_negrita { font-size: 34px; font-weight: bold; }
+
+.txt_arial_32 { font-size: 32px; }
+.txt_arial_32_negrita { font-size: 32px; font-weight: bold; }
+
+/* ... y así hasta txt_arial_7 igual que Cambria */
