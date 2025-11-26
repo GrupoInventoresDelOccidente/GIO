@@ -1,0 +1,179 @@
+/* =====================================================
+   GIO — PALETA GLOBAL DE COLORES
+   ===================================================== */
+
+:root {
+
+  /* VERDE (ÉXITO) */
+  --clr-verde-bajo:  #d5f5e3;
+  --clr-verde-medio: #1e8449;
+  --clr-verde-alto:  #145a32;
+
+  /* ROJO (ERROR) */
+  --clr-rojo-bajo:  #fdecea;
+  --clr-rojo-medio: #c0392b;
+  --clr-rojo-alto:  #7b241c;
+
+  /* AMARILLO (ADVERTENCIA) */
+  --clr-amarillo-bajo:  #fef5e7;
+  --clr-amarillo-medio: #f1c40f;
+  --clr-amarillo-alto:  #b7950b;
+
+  /* NARANJA */
+  --clr-naranja-bajo:  #fae5d3;
+  --clr-naranja-medio: #e67e22;
+  --clr-naranja-alto:  #884004;
+
+  /* AZUL (INFORMACIÓN) */
+  --clr-azul-bajo:  #ebf5fb;
+  --clr-azul-medio: #3498db;
+  --clr-azul-alto:  #21618c;
+
+  /* NEGROS / GRISES */
+  --clr-negro-bajo:  #e5e7e9;
+  --clr-negro-medio: #566573;
+  --clr-negro-alto:  #1c2833;
+
+  /* FONDOS, BORDES, TEXTO */
+  --clr-fondo: #f5f5f5;
+  --clr-fondo-card: #ffffff;
+  --clr-borde: #d5d8dc;
+  --clr-borde-suave: #e5e7e9;
+
+  --clr-texto-principal: #1c2833;
+  --clr-texto-suave: #7f8c8d;
+
+  /* FUENTES */
+  --font-cambria: Cambria, "Times New Roman", serif;
+  --font-arial: Arial, Helvetica, sans-serif;
+
+
+
+   
+/* =====================================================
+   GIO — SISTEMA TIPOGRÁFICO
+   ===================================================== */
+
+.titulo_h1 { font-family: var(--font-cambria); font-size: 36px; font-weight: bold; }
+.titulo_h2 { font-size: 30px; font-weight: bold; font-family: var(--font-cambria); }
+.titulo_h3 { font-size: 24px; font-weight: bold; font-family: var(--font-cambria); }
+
+.subtitulo { font-size: 18px; font-family: var(--font-cambria); }
+
+.txt { font-size: 14px; font-family: var(--font-arial); }
+.txt-suave { color: var(--clr-texto-suave); }
+.txt-bold { font-weight: bold; }
+
+/* =====================================================
+   GIO — DISTRIBUCIÓN
+   ===================================================== */
+
+.gio-form {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 24px;
+  background: var(--clr-fondo-card);
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.15);
+}
+
+.gio-section {
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid var(--clr-borde-suave);
+}
+
+.fila { display: flex; gap: 12px; }
+.col { flex: 1; }
+
+
+/* =====================================================
+   GIO — INPUTS PROFESIONALES
+   ===================================================== */
+
+.gio-input,
+.gio-select,
+.gio-textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--clr-borde);
+  border-radius: 6px;
+  background: #fff;
+  font-family: var(--font-arial);
+  font-size: 14px;
+  transition: all .25s ease;
+}
+
+/* Estados */
+.gio-input-empty   { background: #fff8dc; }
+.gio-input-error   { border-color: var(--clr-rojo-medio); background: var(--clr-rojo-bajo); }
+.gio-input-ok      { border-color: var(--clr-verde-medio); background: var(--clr-verde-bajo); }
+
+/* Textarea */
+.gio-textarea { min-height: 90px; resize: vertical; }
+
+/* Select */
+.gio-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%231c2833' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'><path d='M31.3 192h257.4c28.4 0 42.8 34.5 22.6 54.6l-128.7 128c-12.5 12.5-32.8 12.5-45.3 0l-128.7-128C-11.5 226.5 2.9 192 31.3 192z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+}
+
+/* Label */
+.gio-label { font-weight: bold; margin-bottom: 4px; display: block; }
+.gio-label-req { color: var(--clr-rojo-medio); margin-left: 4px; }
+
+
+
+
+/* =====================================================
+   GIO — MENSAJES
+   ===================================================== */
+
+.gio-msg {
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-top: 6px;
+  font-size: 13px;
+  animation: fade .25s;
+}
+
+.gio-msg-error  { background: var(--clr-rojo-bajo);    color: var(--clr-rojo-medio); }
+.gio-msg-warn   { background: var(--clr-amarillo-bajo); color: var(--clr-amarillo-medio); }
+.gio-msg-ok     { background: var(--clr-verde-bajo);    color: var(--clr-verde-alto); }
+.gio-msg-info   { background: var(--clr-azul-bajo);     color: var(--clr-azul-alto); }
+
+@keyframes fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+
+
+   /* =====================================================
+   GIO — IMPRESIÓN A4
+   ===================================================== */
+
+@media print {
+
+  @page {
+    size: A4;
+    margin: 15mm 15mm 18mm 15mm;
+  }
+
+  .no-print { display: none !important; }
+
+  .gio-form {
+    max-width: 100%;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+}
+
+
