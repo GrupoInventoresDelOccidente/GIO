@@ -236,121 +236,110 @@ body {
 .gio-label-req { color: var(--clr-rojo-medio); margin-left: 4px; }
 
 
-/* ==========================================================
-       BOTONES (Enviar / Cancelar / Agregar) - DISEÑO MEJORADO
-    ========================================================== */
+/* =====================================================
+   BARRA DE IDIOMAS (Botones superiores)
+   ===================================================== */
 
-    .contenedor-botones {
-      margin-top: 30px;
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      align-items: center;
-      padding-top: 10px;
-      border-top: 1px dashed #cccccc; /* Separador sutil */
-    }
+.gio-lang-bar {
+  margin-bottom: 16px;
+  text-align: center;
+}
 
-    .boton-formulario {
-      min-width: 130px;
-      padding: 10px 20px;
-      border-radius: 30px; /* Bordes redondeados tipo "píldora" */
-      border: none;
-      font-family: Cambria, serif;
-      font-size: 13px;
-      font-weight: bold;
-      text-transform: uppercase; /* Texto en mayúsculas para más elegancia */
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.15); /* Sombra suave */
-      position: relative;
-      overflow: hidden;
-    }
+.gio-lang-bar-title {
+  font-size: 13px;
+  margin: 0 0 8px 0;
+  color: var(--clr-texto-principal);
+}
 
-    /* Efecto al presionar (click) */
-    .boton-formulario:active {
-      transform: translateY(2px);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    }
+/* Contenedor de los botones */
+.gio-lang-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
 
-    /* --- BOTÓN ENVIAR / AGREGAR (VERDE) --- */
-    /* Usamos un degradado de verde claro a oscuro */
-    .boton-enviar-activo {
-      background: linear-gradient(135deg, #43a047 0%, #1b5e20 100%);
-      color: #ffffff;
-    }
+/* Botón individual de idioma */
+.gio-lang-button {
+  min-width: 140px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--clr-verde-medio);
+  background: var(--clr-verde-bajo);
+  color: var(--clr-verde-alto);
+  font-size: 13px;
+  cursor: pointer;
+  font-family: var(--txt-arial);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+}
 
-    .boton-enviar-activo:hover {
-      background: linear-gradient(135deg, #66bb6a 0%, #2e7d32 100%);
-      box-shadow: 0 6px 12px rgba(27, 94, 32, 0.4); /* Sombra verde brillante */
-      transform: translateY(-2px); /* Se eleva un poco */
-    }
+.gio-lang-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+}
 
-    /* --- BOTÓN CANCELAR (ROJO) --- */
-    /* Usamos un degradado de rojo claro a oscuro */
-    .boton-cancelar {
-      background: linear-gradient(135deg, #e53935 0%, #b71c1c 100%);
-      color: #ffffff;
-    }
+.gio-lang-button--active {
+  background-color: var(--clr-verde-medio);
+  color: #ffffff;
+  border-color: var(--clr-verde-alto);
+}
 
-    .boton-cancelar:hover {
-      background: linear-gradient(135deg, #ef5350 0%, #c62828 100%);
-      box-shadow: 0 6px 12px rgba(183, 28, 28, 0.4); /* Sombra roja brillante */
-      transform: translateY(-2px);
-    }
+/* En pantallas pequeñas, botones a todo lo ancho */
+@media (max-width: 600px) {
+  .gio-lang-buttons {
+    justify-content: stretch;
+  }
+  .gio-lang-button {
+    width: 100%;
+  }
+}
 
-    /* --- BOTÓN DESACTIVADO (GRIS) --- */
-    .boton-enviar-desactivado {
-      background: #cfcfcf;
-      color: #7a7a7a;
-      cursor: not-allowed;
-      box-shadow: none;
-      transform: none !important;
-    }
 
-    /* Mensaje de estado debajo de los botones */
-    .mensaje-estado-envio {
-      width: 100%; /* Para que baje a la siguiente línea */
-      margin-top: 10px;
-      font-family: Cambria, serif;
-      font-size: 12px;
-      font-weight: bold;
-      color: #d32f2f;
-      text-align: left;
-    }
-    .mensaje-estado-envio.ok {
-      color: #2e7d32;
-    }
+/* =====================================================
+   BOTONES PRINCIPALES (Guardar, etc.)
+   ===================================================== */
 
-    /* --- BOTÓN ELIMINAR FILA (TABLA) --- */
-    /* Lo hacemos redondo y rojo para que combine */
-    .celda-acciones-organizador {
-      text-align: center;
-      vertical-align: middle;
-    }
+.boton_primario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 18px;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--clr-azul-medio);
+  color: #ffffff;
+  font-family: var(--txt-arial);
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease,
+    filter 0.15s ease;
+}
 
-    .Eliminar_Filas {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%; /* Completamente redondo */
-      border: none;
-      background: linear-gradient(135deg, #ffca28 0%, #ff6f00 100%); /* Naranja/Amarillo alerta */
-      color: #fff;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      transition: all 0.2s ease;
-    }
+.boton_primario:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.18);
+}
 
-    .Eliminar_Filas:hover {
-      background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%); /* Cambia a rojo al pasar mouse */
-      transform: scale(1.1);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
+.boton_primario:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.boton_primario:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 /* =====================================================
     GIO — MENSAJES
     ===================================================== */
