@@ -127,6 +127,114 @@
 
 
 
+/* =====================================================
+   BOTONES GIO
+   ===================================================== */
+
+/* Contenedor de botones de idioma */
+.gio-lang-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+/* Botones de idioma */
+.gio-lang-button {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--clr-azul-medio);
+  background: var(--clr-azul-bajo);
+  color: var(--clr-azul-alto);
+  font-size: 13px;
+  font-family: inherit;          /* usa la fuente global */
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.08s ease;
+}
+
+.gio-lang-button:hover {
+  background: var(--clr-azul-medio);
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+  transform: translateY(-1px);
+}
+
+/* Idioma activo */
+.gio-lang-button--active {
+  background: var(--clr-azul-alto);
+  border-color: var(--clr-azul-alto);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.22);
+}
+
+   
+
+/* -----------------------------------------------------
+   Botones generales (Guardar, etc.)
+   ----------------------------------------------------- */
+
+.gio-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 18px;
+  border-radius: 6px;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.08s ease,
+    filter 0.18s ease;
+}
+
+/* Primario (Guardar) */
+.gio-btn-primary {
+  background: var(--clr-verde-medio);
+  color: #ffffff;
+}
+
+.gio-btn-primary:hover {
+  background: var(--clr-verde-alto);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.22);
+  transform: translateY(-1px);
+}
+
+/* Estados */
+.gio-btn:disabled,
+.gio-btn.gio-btn--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Barra de acciones al pie */
+.gio-actions-bar {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Responsive: botones de idioma a ancho completo en móvil */
+@media (max-width: 600px) {
+  .gio-lang-buttons {
+    justify-content: stretch;
+  }
+  .gio-lang-button {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
 
 /* =====================================================
    GIO — MENSAJES
