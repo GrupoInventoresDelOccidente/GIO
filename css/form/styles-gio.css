@@ -46,36 +46,37 @@
     /* FUENTES */
     --font-cambria: Cambria, "Times New Roman", serif;
     --font-arial: Arial, Helvetica, sans-serif;
+    /* MEJORA: Alias para fuente general usado en el bloque de impresión/loader */
+    --font-general: var(--font-arial); 
 }
 
-/* Aplicación base para asegurar la fuente y color de texto */
+/* Aplicación base */
 body {
     background-color: var(--clr-fondo);
     color: var(--clr-texto-principal);
-    font-family: var(--font-arial);
-    line-height: 1.6; /* Mejora de legibilidad */
+    font-family: var(--font-general);
+    line-height: 1.6;
 }
 
 /* =====================================================
     GIO — SISTEMA TIPOGRÁFICO
     ===================================================== */
-/* NOTA: Las clases originales se mantienen por compatibilidad, pero se mapean a las clases semánticas del HTML */
 
 .gio-title-main { /* Mapeo de h1 del HTML */
     font-family: var(--font-cambria);
     font-size: 36px;
     font-weight: bold;
-    margin-bottom: 8px; /* Espaciado con el subtítulo */
+    margin-bottom: 8px;
 }
 
 .gio-subtitle { /* Mapeo del p del HTML */
     font-size: 18px;
     font-family: var(--font-cambria);
     color: var(--clr-texto-suave);
-    margin-bottom: 20px; /* Espaciado con la siguiente sección */
+    margin-bottom: 20px;
 }
 
-/* Mapeo de clases de tipografía antiguas */
+/* Clases de tipografía antiguas (mantener por compatibilidad) */
 .titulo_h1 { font-family: var(--font-cambria); font-size: 36px; font-weight: bold; }
 .titulo_h2 { font-size: 30px; font-weight: bold; font-family: var(--font-cambria); }
 .titulo_h3 { font-size: 24px; font-weight: bold; font-family: var(--font-cambria); }
@@ -89,28 +90,27 @@ body {
     GIO — DISTRIBUCIÓN
     ===================================================== */
 
-.gio-form-root { /* Renombrado de .gio-form a .gio-form-root para coincidir con el HTML */
+.gio-form-root {
     max-width: 900px;
-    margin: 40px auto; /* Aumento de margen superior/inferior para mejor aislamiento */
-    padding: 30px; /* Aumento de padding para mejor aire */
+    margin: 40px auto;
+    padding: 30px;
     background: var(--clr-fondo-card);
-    border-radius: 12px; /* Ligeramente más redondeado */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra más suave y moderna */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .gio-section {
-    margin-top: 25px; /* Más espaciado entre secciones */
+    margin-top: 25px;
     padding-top: 25px;
     border-top: 1px solid var(--clr-borde-suave);
 }
 
-.gio-form-divider { /* Estilo para la línea horizontal entre la barra de idioma y el contenido */
+.gio-form-divider {
     border: none;
     border-top: 1px solid var(--clr-borde-suave);
     margin: 15px 0;
 }
 
-/* Título de sección si se usa en el formulario dinámico */
 .gio-title-section {
     font-size: 20px;
     font-family: var(--font-cambria);
@@ -121,18 +121,16 @@ body {
     border-bottom: 2px solid var(--clr-borde-suave);
 }
 
-/* Flexbox y Grid (manteniendo las clases originales) */
 .fila { 
     display: flex; 
-    gap: 20px; /* Aumento de gap para mejor separación en escritorio */
+    gap: 20px;
 }
 .col { flex: 1; }
 
-/* Media query para hacer el flexbox en columna en móvil */
 @media (max-width: 768px) {
     .fila {
         flex-direction: column;
-        gap: 0; /* No necesitamos gap entre elementos de columna si el .gio-field ya lo maneja */
+        gap: 0;
     }
 }
 
@@ -142,34 +140,33 @@ body {
     ===================================================== */
 
 .gio-field {
-    margin-bottom: 18px; /* Espaciado entre campos */
+    margin-bottom: 18px;
 }
 
-.gio-field-label { /* Clase usada en el HTML para las etiquetas */
+.gio-field-label {
     font-weight: bold;
-    margin-bottom: 5px; /* Pequeño espacio entre label y input */
-    display: flex; /* Para alinear el texto con el * si es necesario */
+    margin-bottom: 5px;
+    display: flex;
     gap: 4px;
     font-size: 14px;
 }
 
-/* Estilo para el indicador de obligatorio * */
 .gio-field-label span[aria-hidden="true"] {
     color: var(--clr-rojo-medio);
     font-weight: bold;
-    line-height: 1; /* Asegura la alineación */
+    line-height: 1;
 }
 
 .gio-input,
 .gio-select,
 .gio-textarea {
     width: 100%;
-    padding: 10px 12px; /* Ligero aumento de padding vertical */
+    padding: 10px 12px;
     border: 1px solid var(--clr-borde);
     border-radius: 6px;
     background: #fff;
-    font-family: var(--font-arial);
-    font-size: 15px; /* Ligero aumento del tamaño de fuente para legibilidad */
+    font-family: var(--font-general);
+    font-size: 15px;
     color: var(--clr-texto-principal);
     transition: 
         border-color .25s ease, 
@@ -177,18 +174,17 @@ body {
         background-color .25s ease;
 }
 
-/* Focus: Mejora visual al interactuar */
 .gio-input:focus,
 .gio-select:focus,
 .gio-textarea:focus {
     outline: none;
     border-color: var(--clr-azul-medio);
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3); /* Sombra de enfoque (azul) */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
 }
 
 /* Estados */
 .gio-input-empty,
-.gio-select.gio-input-empty { /* Se asume que JS agrega esta clase a inputs vacíos */
+.gio-select.gio-input-empty { 
     border-color: var(--clr-naranja-medio);
 }
 .gio-input-error,
@@ -205,19 +201,18 @@ body {
 }
 
 /* Textarea */
-.gio-textarea { min-height: 100px; resize: vertical; } /* Ligero aumento de altura */
+.gio-textarea { min-height: 100px; resize: vertical; } 
 
 /* Select */
 .gio-select {
-    appearance: none; /* Elimina el estilo nativo de select */
+    appearance: none;
     cursor: pointer;
     background-image: url("data:image/svg+xml;utf8,<svg fill='%23566573' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'><path d='M31.3 192h257.4c28.4 0 42.8 34.5 22.6 54.6l-128.7 128c-12.5 12.5-32.8 12.5-45.3 0l-128.7-128C-11.5 226.5 2.9 192 31.3 192z'/></svg>");
     background-repeat: no-repeat;
     background-position: right 12px center;
-    background-size: 10px; /* Ligeramente más pequeño */
+    background-size: 10px;
 }
 
-/* Estilo para opción placeholder del select (si se usa) */
 .gio-select option[disabled]:first-child {
     color: var(--clr-texto-suave);
 }
@@ -228,18 +223,15 @@ body {
     margin-top: 4px;
     padding-left: 2px;
     color: var(--clr-texto-suave);
-    /* Animación para aparecer si se usa para errores */
     transition: color 0.3s ease;
 }
 
-/* Estilo de helper-text cuando hay error (se debe aplicar con JS) */
 .gio-field-error .gio-helper-text {
     color: var(--clr-rojo-medio);
     font-weight: bold;
 }
 
-
-/* Clases antiguas de Label, mantener por si hay código legacy */
+/* Clases antiguas de Label (mantener por compatibilidad) */
 .gio-label { font-weight: bold; margin-bottom: 4px; display: block; }
 .gio-label-req { color: var(--clr-rojo-medio); margin-left: 4px; }
 
@@ -248,7 +240,94 @@ body {
     BOTONES GIO
     ===================================================== */
 
-/* ... (Bloque de botones de idioma y generales se mantiene igual, ya están bien diseñados) ... */
+/* Contenedor de botones de idioma */
+.gio-lang-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+/* Botones de idioma */
+.gio-lang-button {
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--clr-azul-medio);
+    background: var(--clr-azul-bajo);
+    color: var(--clr-azul-alto);
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        background-color 0.18s ease,
+        color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.08s ease;
+}
+
+.gio-lang-button:hover {
+    background: var(--clr-azul-medio);
+    color: #ffffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    transform: translateY(-1px);
+}
+
+/* Idioma activo */
+.gio-lang-button--active {
+    background: var(--clr-azul-alto);
+    border-color: var(--clr-azul-alto);
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.22);
+}
+
+/* Botones generales (Guardar, etc.) */
+.gio-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 7px 18px;
+    border-radius: 6px;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+        background-color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.08s ease,
+        filter 0.18s ease;
+}
+
+/* Primario (Guardar) */
+.gio-btn-primary {
+    background: var(--clr-verde-medio);
+    color: #ffffff;
+}
+
+.gio-btn-primary:hover {
+    background: var(--clr-verde-alto);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.22);
+    transform: translateY(-1px);
+}
+
+/* Estados */
+.gio-btn:disabled,
+.gio-btn.gio-btn--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Barra de acciones al pie */
+.gio-actions-bar {
+    margin-top: 18px;
+    display: flex;
+    justify-content: flex-start;
+}
 
 /* Responsive: botones de idioma a ancho completo en móvil */
 @media (max-width: 600px) {
@@ -258,106 +337,317 @@ body {
     .gio-lang-button {
         flex: 1 1 100%;
         text-align: center;
-        max-width: none; /* Asegura que tome todo el ancho */
+        max-width: none;
     }
 }
 
-/* =====================================================
-    GIO — LOADER
-    ===================================================== */
-/* Nuevos estilos para el loader que falta en el CSS original */
-
-.gio-loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco semitransparente */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    transition: opacity 0.3s ease;
-}
-
-.gio-loader.oculto {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.gio-loader-box {
-    text-align: center;
-    width: 80%;
-    max-width: 300px;
-    padding: 20px;
-    background: var(--clr-fondo-card);
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.gio-loader-text {
-    font-size: 15px;
-    margin-bottom: 10px;
-    color: var(--clr-texto-principal);
-}
-
-.gio-progress {
-    width: 100%;
-    height: 8px;
-    background-color: var(--clr-borde-suave);
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.gio-progress-bar {
-    height: 100%;
-    width: 0%;
-    background-color: var(--clr-azul-medio);
-    transition: width 0.3s ease;
-}
 
 /* =====================================================
     GIO — MENSAJES
     ===================================================== */
 
-
 .gio-msg {
-  padding: 8px 12px;
-  border-radius: 6px;
-  margin-top: 6px;
-  font-size: 13px;
-  animation: fade .25s;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-top: 6px;
+    font-size: 13px;
+    animation: fade .25s;
 }
 
 .gio-msg-error  { background: var(--clr-rojo-bajo);    color: var(--clr-rojo-medio); }
 .gio-msg-warn   { background: var(--clr-amarillo-bajo); color: var(--clr-amarillo-medio); }
 .gio-msg-ok     { background: var(--clr-verde-bajo);    color: var(--clr-verde-alto); }
-.gio-msg-info   { background: var(--clr-azul-bajo);     color: var(--clr-azul-alto); }
+.gio-msg-info   { background: var(--clr-azul-bajo);      color: var(--clr-azul-alto); }
 
 @keyframes fade {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
+
 /* =====================================================
-    GIO — IMPRESIÓN A4
+    LOADER GIO – PANTALLA DE CARGA DEL FORMULARIO
     ===================================================== */
 
+.gio-loader {
+    position: fixed;
+    inset: 0;
+    /* Fondo radial degradado */
+    background: radial-gradient(circle at top, #ffffff 0%, #f4f6f7 45%, #dfe4ea 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    /* Efecto de desenfoque, ¡moderno! */
+    backdrop-filter: blur(3px); 
+    transition: opacity .4s ease, visibility .4s ease;
+}
+
+/* Ocultar suavemente cuando termina de cargar */
+.gio-loader.oculto {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Tarjeta central del loader */
+.gio-loader-box {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px 26px 18px 26px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+    min-width: 260px;
+    max-width: 340px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Icono circular (spinner + check futuro si quieres) */
+.gio-loader-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 3px solid var(--clr-azul-bajo);
+    border-top-color: var(--clr-azul-medio);
+    margin: 0 auto 14px auto;
+    animation: giro_loader 0.9s linear infinite;
+}
+
+/* Texto principal del loader */
+.gio-loader-text {
+    font-family: var(--font-general);
+    font-size: 15px;
+    color: var(--clr-azul-alto);
+    margin-bottom: 10px;
+}
+
+/* Texto secundario (pequeño) */
+.gio-loader-subtexto {
+    font-family: var(--font-general);
+    font-size: 12px;
+    color: var(--clr-texto-suave);
+    margin-bottom: 12px;
+}
+
+/* Barra de progreso */
+.gio-progress {
+    width: 220px;
+    height: 12px;
+    border-radius: 999px;
+    background: #e5e7e9;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.gio-progress-bar {
+    height: 100%;
+    width: 0%;
+    /* Degradado en la barra para un look más "premium" */
+    background: linear-gradient(90deg, var(--clr-azul-medio), var(--clr-azul-alto));
+    border-radius: 999px;
+    box-shadow: 0 0 8px rgba(21, 101, 192, 0.5);
+    transition: width .3s ease;
+}
+
+/* Animación del icono circular */
+@keyframes giro_loader {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive del loader (por si acaso) */
+@media (max-width: 480px) {
+    .gio-loader-box {
+        width: 80%;
+        min-width: 0;
+        padding: 18px 18px 16px 18px;
+    }
+}
+
+
+/* =====================================================
+    IMPRESIÓN A4 GIO – FORMULARIOS
+    ===================================================== */
 @media print {
 
+    /* -----------------------------------------
+      CONFIGURACIÓN GENERAL DE LA PÁGINA
+      ----------------------------------------- */
     @page {
         size: A4;
-        margin: 15mm 15mm 18mm 15mm;
+        margin: 15mm 15mm 18mm 15mm;    /* márgenes estándar */
     }
 
-    /* Clase actualizada para impresión */
-    .gio-no-print { display: none !important; }
+    body {
+        background: #ffffff !important;
+        /* Asegura que los colores se impriman (aunque el usuario debe tenerlo habilitado) */
+        -webkit-print-color-adjust: exact; 
+        print-color-adjust: exact;
+        font-family: var(--font-general);
+        font-size: 11pt;
+        color: var(--clr-negro-alto);
+    }
 
-    .gio-form-root {
-        max-width: 100%;
-        box-shadow: none;
-        padding: 0;
-        margin: 0;
+    /* -----------------------------------------
+      OCULTAR ELEMENTOS DE INTERFAZ
+      ----------------------------------------- */
+
+    /* OCULTAR: Idiomas, loader, botones, mensajes flotantes.
+       NOTA: Se utilizan las clases del HTML (.gio-lang-bar, .gio-actions-bar, .gio-loader)
+       y se mantienen las clases genéricas de la fuente (no_imprimir). */
+    .gio-lang-bar,
+    .gio-lang-buttons,
+    .gio-loader,
+    .gio-actions-bar,
+    .gio-no-print, /* Clase usada en el HTML */
+    .no_imprimir {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    /* Elementos solo para impresión */
+    .solo_imprimir {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    /* -----------------------------------------
+      CONTENEDORES
+      ----------------------------------------- */
+
+    .gio-form-root, /* Clase del contenedor principal */
+    .contenedor_formulario {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+
+    /* Evitar cortes feos en secciones y filas 
+       NOTA: Se usan las clases del HTML (.gio-section, .fila)
+    */
+    .gio-section,
+    .seccion_formulario,
+    .fila,
+    .columna {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Forzar salto antes de secciones específicas si luego lo necesitas
+       .seccion_salto_pagina {
+           page-break-before: always;
+       }
+    */
+
+    /* -----------------------------------------
+      TIPOGRAFÍA Y TÍTULOS
+      ----------------------------------------- */
+
+    h1,
+    .titulo_h1,
+    .gio-title-main { /* Incluye la clase de título principal */
+        font-family: var(--font-cambria);
+        font-size: 20pt;
+        font-weight: bold;
+        margin-bottom: 6pt;
+    }
+
+    h2,
+    .titulo_h2,
+    .gio-title-section { /* Incluye la clase de título de sección */
+        font-family: var(--font-cambria);
+        font-size: 16pt;
+        font-weight: bold;
+        margin: 10pt 0 4pt;
+    }
+
+    h3,
+    .titulo_h3 {
+        font-family: var(--font-cambria);
+        font-size: 13pt;
+        font-weight: bold;
+        margin: 8pt 0 3pt;
+    }
+
+    p,
+    label,
+    span,
+    input,
+    textarea,
+    select {
+        font-size: 10pt !important;
+        color: var(--clr-negro-alto) !important;
+    }
+
+    /* Etiquetas un poco más marcadas */
+    .gio-field-label, /* Clase del HTML */
+    .etiqueta_input {
+        font-weight: bold;
+        margin-bottom: 2pt;
+    }
+
+    /* -----------------------------------------
+      CAMPOS DE FORMULARIO
+      ----------------------------------------- */
+
+    input,
+    textarea,
+    select {
+        /* Se reemplaza el input por una línea punteada que simula el espacio para llenar, más limpio. */
+        border: none;
+        border-bottom: 1px dotted var(--clr-negro-medio); 
+        padding: 2pt 0; /* Más ajustado */
+        background: #ffffff !important;
+        box-shadow: none !important;
+    }
+    
+    /* Asegura que el contenido del select sea visible y que no aparezca el control */
+    select {
+        appearance: none;
+        background-image: none !important;
+        cursor: default;
+    }
+
+    textarea {
+        min-height: 40pt;
+    }
+
+    /* -----------------------------------------
+      TABLAS (si las usas)
+      ----------------------------------------- */
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        page-break-inside: avoid;
+    }
+
+    table th,
+    table td {
+        border: 1px solid var(--clr-borde);
+        padding: 4pt 6pt;
+        font-size: 9.5pt;
+    }
+
+    table th {
+        background: #f4f6f7;
+        font-weight: bold;
+    }
+
+    /* -----------------------------------------
+      SEPARADORES Y ESPACIOS
+      ----------------------------------------- */
+
+    /* Ajuste para el separador principal */
+    .gio-form-divider {
+        display: none !important;
+    }
+
+    .separador_suave,
+    .separador_fuerte {
+        margin: 8pt 0;
+        border-color: var(--clr-negro-medio) !important;
     }
 }
